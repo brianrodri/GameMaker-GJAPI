@@ -1,4 +1,3 @@
-<html>
 	<body>
 		<table class="functionSet">
 			<!-- MAIN FUNCTIONS -->
@@ -457,4 +456,3 @@
 			</tr>
 		</table>
 	</body>
-</html>
