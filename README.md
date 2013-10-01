@@ -8,7 +8,7 @@
 	<p>You need to find the ID and private key of your game of choice. You can find these by going to your dashboard, clicking on your game (or creating one if you haven't yet), and then clicking the "Achievements" tab. Your details will be displayed on the side area titled "<strong>Game Info</strong>."</p>
 	<p>Now, in your project, you're going to run the <a class="functionName" href="#GJ_begin">GJ_begin()</a> script (preferably in some Game Start event), which uses the game ID and private key found on that page as arguments. Next you need to find a place to run <a class="functionName" href="#GJ_step">GJ_step()</a>. This function needs to be run <em>once every step</em>. There are many ways to do this, personally though, I like to have a persistent object run it in it's step event. With these two steps finished, you're all ready to use the API! You can now call any function and play w/ it's outputs to achieve whatever you'd like with Game Jolt's Achievement System!</p>
 	<h3>Using Trophies</h3>
-	<p>Load trophy data using: GJ_fetch_trophies(). After downloading this information, you can get and display the values associated with each trophy in your games, including their images!</p>
+	<p>Load trophy data using: GJ_fetch_trophies(). After downloading this information, you can get and display the values associated with each trophy in your game, including their images!</p>
 	<p>Have a user earn a trophy using: GJ_store_trophyEarned(). This will update local storage and online storage.</p>
 	<h3>Using Highscores</h3>
 	<p>Before having the option to download any scores, you must download the information of the tables using GJ_fetch_tables()<br />
