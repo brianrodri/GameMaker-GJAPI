@@ -2,7 +2,6 @@
 <body>
 <div class="header">
 	<h1>Game Achievements System<br />for Game Maker 8.0</h1>
-	<em>by thatbrod</em>
 </div>
 <div class="wrapper">
 	<h3>Getting Started</h3>
