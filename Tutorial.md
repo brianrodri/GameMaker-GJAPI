@@ -3,35 +3,35 @@ Game Jolt API for Game Maker Tutorial
 
 Table of Contents
 -----------------
-1. Introduction
-2. Important Concepts  
-    * Local vs. Online Storage  
-    * Asynchronous vs. Synchronous commands
-3. Setting the API up for Your Game  
-    * Finding Your Game's Details  
-    * Setting Your Game Up  
-    * Logging In
-4. Running the API Commands  
-    * Users
-        * How About Other Users?
-    * Sessions
-    * Trophies
-        * Earning Trophies
-    * Scores
-        * Getting Scores
-        * Submitting Scores
-    * Data Storage
-        * Online Management
-        * In-Game Management
-            * Fetching Online Data
-            * Storing Online Data
-            * Getting Local Data
-            * Setting Local Data
-            * Updating Data
-            * Removing Data
-    * Cleaning Up
-        * Cleaning Fetchables
-5. Conclusion
+1. [Introduction](#introduction)
+2. [Important Concepts](#important-concepts)  
+    * [Local vs. Online Storage](#local-vs-online-storage)  
+    * [Asynchronous vs. Synchronous commands](#asynchronous-vs-synchronous-commands)
+3. [Setting the API up for Your Game](#setting-the-api-up-for-your-game)  
+    * [Finding Your Game's Details](#finding-your-games-details)  
+    * [Setting Your Game Up](#setting-your-game-up)  
+    * [Logging In](#logging-in)
+4. [Running the API Commands](#running-the-api-commands)  
+    * [Users](#users)
+        * [How About Other Users?](#how-about-other-users)
+    * [Sessions](#sessions)
+    * [Trophies](#trophies)
+        * [Earning Trophies](#earning-trophies)
+    * [Scores](#scores)
+        * [Getting Scores](#getting-scores)
+        * [Submitting Scores](#submitting-scores)
+    * [Data Storage](#data-storage)
+        * [Online Management](#online-management)
+        * [In-Game Management](#in-game-management)
+            * [Fetching Online Data](#fetching-online-data)
+            * [Storing Online Data](#storing-online-data)
+            * [Getting Local Data](#getting-local-data)
+            * [Setting Local Data](#setting-local-data)
+            * [Updating Data](#updating-data)
+            * [Removing Data](#removing-data)
+    * [Cleaning Up](#cleaning-up)
+        * [Cleaning Fetchables](#cleaning-fetchables)
+5. [Conclusion](#conclusion)
 
 Introduction
 ------------
