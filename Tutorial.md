@@ -6,7 +6,7 @@ Table of Contents
 1. [Introduction](#introduction)
 2. [Important Concepts](#important-concepts)  
     * [Local vs. Online Storage](#local-vs-online-storage)  
-    * [Asynchronous vs. Synchronous commands](#asynchronous-vs-synchronous-commands)
+    * [Async vs. Sync commands](#async-vs-sync-commands)
 3. [Setting the API up for Your Game](#setting-the-api-up-for-your-game)  
     * [Finding Your Game's Details](#finding-your-games-details)  
     * [Setting Your Game Up](#setting-your-game-up)  
@@ -72,7 +72,7 @@ This is done so that you don't need to update the server for every little
 change. It's important to understand when you _need_ to update data vs. when you
 _want_ to.
 
-### Asynchronous vs. Synchronous Commands
+### Asynch vs. Synch Commands
 
 Asynchronous (async) and synchronous (sync) are actually very important terms
 for programming in general. Synchronous commands will _freeze the program until
