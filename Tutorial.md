@@ -72,7 +72,7 @@ This is done so that you don't need to update the server for every little
 change. It's important to understand when you _need_ to update data vs. when you
 _want_ to.
 
-### Asynch vs. Synch Commands
+### Async vs. Sync Commands
 
 Asynchronous (async) and synchronous (sync) are actually very important terms
 for programming in general. Synchronous commands will _freeze the program until
