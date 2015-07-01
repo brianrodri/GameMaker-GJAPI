@@ -53,7 +53,7 @@ a good read, instead of in bits and pieces.  When you finish you'll have a much
 better understanding of the system and will be well on your way to doing all
 sorts of cool and great stuff with Game Jolt!
 
-Good luck! :)
+Good luck!  :)
 
 
 Important Concepts
@@ -64,7 +64,7 @@ Important Concepts
 The implementation uses the concept of a *local* and an *online* storage.
 The local storage exists only in your game instance, and any changes you make to
 it _will not_ be reflected on the Game Jolt server unless you explicitly call a
-command that does so.  The online storage is Game Jolt itself! When you want to
+command that does so.  The online storage is Game Jolt itself!  When you want to
 store data into Game Jolt, you _push your changes from the local store onto the
 online store_!
 
@@ -189,7 +189,7 @@ is garunteed to return `true`.
 Recalling the logging in section, I mentioned that in order to stay logged in to
 Game Jolt you must occasionally ping the server.  This pinging is used as a way
 of creating a _game session_.  Game sessions appear on your profile, and allow
-other users to know that they are playing your game! Although you don't have to
+other users to know that they are playing your game!  Although you don't have to
 worry about pinging, you do have some control over it: you can change the ping
 rate through the command `GJ_setPingRate`.  If you ever feel you need to do
 this, although I can't think of a reason why as of writing this, you can set
@@ -301,13 +301,13 @@ instructions.
 
 ### Data Storage
 
-The data storage is Game Jolt's most flexible and useful feature! It gives you
+The data storage is Game Jolt's most flexible and useful feature!  It gives you
 the ability to store and fetch strings from its servers that are exclusive to
 your game.  Data is kept in key-value pairs and can be fetched and stored as you
 please.  The data storage is split into two parts: **Global** data and **User**
 data, where each user has their own personal storage space.  The things you can
-accomplish with this simple interface are only bounded by your imagination! Some
-examples of things that you _could_ do include:
+accomplish with this simple interface are only bounded by your imagination!
+Some examples of things that you _could_ do include:
 
  * Online turn-based games
  * Communication between different games (if you own them)
@@ -467,7 +467,7 @@ them up and in action!
 Remember to check [the documentation][documentation] for the full list of
 commands and precise explainations for each command.
 
-Good luck with your projects, and long live Game Jolt! :)
+Good luck with your projects, and long live Game Jolt!  :)
 
 
 [my profile]: http://gamejolt.com/profile/thatbrod/1165
