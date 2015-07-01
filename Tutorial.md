@@ -128,7 +128,7 @@ event code will be able to access it_.
 Now drop _one_ instance of it in your first room, and for the rest of the game
 you won't ever have to worry again!
 
-**Beware!** If at any time you deactivate instances, make sure that the
+**Beware!**  If at any time you deactivate instances, make sure that the
 `GJControl` object stays active!
 
 ### Logging In
@@ -388,7 +388,7 @@ Storing keys that do not exist on the online storage creates them there as well.
 ##### Updating Data
 A perceptive reader will notice there is a problem with using only store and
 fetch commands on the data store: _What if someone fetches a value before you
-get a chance to store it's new value?_ Indeed, this is a problem that exists in
+get a chance to store it's new value?_  Indeed, this is a problem that exists in
 many types of programs, and is known as a **race condition**.
 
 Game Jolt addresses this problem by giving us a set of _update commands_.
