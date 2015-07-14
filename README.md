@@ -5,17 +5,8 @@
 </div>
 <div class="wrapper">
 	<h3>Getting Started</h3>
-	<p>You need to find the ID and private key of your game of choice. You can find these by going to your dashboard, clicking on your game (or creating one if you haven't yet), and then clicking the "Achievements" tab. Your details will be displayed on the side area titled "<strong>Game Info</strong>."</p>
-	<p>Now, in your project, you're going to run the <a class="functionName" href="#GJ_begin">GJ_begin()</a> script (preferably in some Game Start event), which uses the game ID and private key found on that page as arguments. Next you need to find a place to run <a class="functionName" href="#GJ_step">GJ_step()</a>. This function needs to be run <em>once every step</em>. There are many ways to do this, personally though, I like to have a persistent object run it in it's step event. With these two steps finished, you're all ready to use the API! You can now call any function and play w/ it's outputs to achieve whatever you'd like with Game Jolt's Achievement System!</p>
-	<h3>Using Trophies</h3>
-	<p>Load trophy data using: GJ_fetch_trophies(). After downloading this information, you can get and display the values associated with each trophy in your game, including their images!</p>
-	<p>Have a user earn a trophy using: GJ_store_trophyEarned(). This will update local storage and online storage.</p>
-	<h3>Using Highscores</h3>
-	<p>Before having the option to download any scores, you must download the information of the tables using GJ_fetch_tables()<br />
-	After that, you can store and fetch the scores associated with your tables by using the relevant functions.</p>
-	<h3>Using Data Storage</h3>
-	<p>Data storage works by keeping a local "cache" of your data where you make your edits. You can push them onto the Game Jolt servers whenever you want, as well as download the data that's currently online. In order to do "real updates" like incrementing variables or something like that, make sure you use the <b>update</b> functions, so that no information is lost.</p>
-	<h3>Function List</h3>
+	<p>I've written a tutorial on the complete usage of this API <a href="https://github.com/thatbrod/GameMaker-GJAPI/blob/master/Tutorial.md" alt="Tutorial Page">here</a>. Please refer to that for instructions of use, as this page is dedicated to the descriptions of each individual function.</p>
+	<h3>Documentation</h3>
 	<table class="functionSet">
 			<!-- MAIN FUNCTIONS -->
 			<tr class="header"><th id="MainFunctions" colspan="2">Main Functions</th></tr>
