@@ -7,12 +7,12 @@
 	<h3>Getting Started</h3>
 	<p>I've written a tutorial on the complete usage of this API <a href="https://github.com/thatbrod/GameMaker-GJAPI/blob/master/Tutorial.md" alt="Tutorial Page">here</a>. Please refer to that for instructions of use, as this page is dedicated to the descriptions of each individual command.</p>
 	<h3>Documentation</h3>
-	<table class="functionSet">
-			<!-- MAIN FUNCTIONS -->
+	<table class="commandSet">
+			<!-- MAIN COMMANDS -->
 			<tr class="header"><th id="MainFunctions" colspan="2">Main Functions</th></tr>
 			<tr>
 				<th id="GJ_begin">GJ_begin(gameID, privateKey)</th>
-				<td>Sets up the API to work with your particular game of choice. No other API functions will work without this being called first. It should only be called once; Unless you use <a class="functionName" href="#GJ_cleanUp">GJ_cleanUp()</a> in which case you need to call <a class="functionName" href="#GJ_begin">GJ_begin()</a> again before continuing the use of API functions.<br /><br />
+				<td>Sets up the API to work with your particular game of choice. No other API commands will work without this being called first. It should only be called once; Unless you use <a class="commandName" href="#GJ_cleanUp">GJ_cleanUp()</a> in which case you need to call <a class="commandName" href="#GJ_begin">GJ_begin()</a> again before continuing the use of API commands.<br /><br />
 				<strong>Returns: </strong>
 				<ul>
 					<li><span class="returnValue">GJ_STATUS_OK</span> - If used correctly</li>
@@ -22,12 +22,12 @@
 			</tr>
 			<tr>
 				<th id="GJ_step">GJ_step()</th>
-				<td>Handles all the grunt work of the API. Must be run once every step of the game in order for the API to function correctly.<br /><br />
+				<td>Handles all the grunt work of the API. Must be run once every step of the game in order for the API to command correctly.<br /><br />
 				<strong>Returns: </strong>Nothing</td>
 			</tr>
 			<tr>
 				<th id="GJ_login">GJ_login(username, usertoken)</th>
-				<td>Takes the given inputs (both <span class="returnValue">strings</span>) and checks with Game Jolt to see if the details are correct. This function forces the game to wait and see if the login was successful. It also automatically downloads the details of that user. (See the <a class="functionName" href="#userGetters">User Getter</a> functions for more information)<br /><br />
+				<td>Takes the given inputs (both <span class="returnValue">strings</span>) and checks with Game Jolt to see if the details are correct. This command forces the game to wait and see if the login was successful. It also automatically downloads the details of that user. (See the <a class="commandName" href="#userGetters">User Getter</a> commands for more information)<br /><br />
 				<strong>Returns: </strong>
 				<ul>
 					<li><span class="returnValue">GJ_STATUS_OK</span> - If all goes well</li>
@@ -57,7 +57,7 @@
 				</td>
 			</tr>
 			
-			<!-- UPDATING FUNCTIONS -->
+			<!-- UPDATING COMMANDS -->
 			<tr class="header"><th id="UpdateFunctions" colspan="2">Update Functions</th></tr>
 			<tr><td colspan="2">Sometimes you need to update data, not just set it to something new. Take global enemy kills, for example. If you just fetch the data, modify it locally, and store it back online, you miss the chance to account for people who may have stored their data in between the time you've been modifying and storing it. By letting Game Jolt update the value, however, it ensures that all of the updates are accounted for because the server must process updates one at a time. As an added benefit, the new value the server holds after applying your update is downloaded and stored into your local data store.</td></tr>
 			<tr>
@@ -85,11 +85,11 @@
 				</ul></td>
 			</tr>
 			
-			<!-- CLEARING FUNCTIONS -->
+			<!-- CLEARING COMMANDS -->
 			<tr class="header"><th id="ClearFunctions" colspan="2">Clearing Functions</th></tr>
 			<tr>
 				<th id="GJ_cleanUp">GJ_cleanUp()</th>
-				<td>Wipes all data that the API may have downloaded. In order to use any API functions again after this, you must call <a class="functionName" href="#GJ_begin">GJ_begin()</a> again.<br /><br />
+				<td>Wipes all data that the API may have downloaded. In order to use any API commands again after this, you must call <a class="commandName" href="#GJ_begin">GJ_begin()</a> again.<br /><br />
 				<strong>Returns: </strong>
 				<ul>
 					<li><span class="returnValue">GJ_STATUS_OK</span> - If used correctly</li>
@@ -127,7 +127,7 @@
 				<strong>Returns: </strong>Nothing</td>
 			</tr>
 			
-			<!-- REMOVAL FUNCTIONS -->
+			<!-- REMOVAL COMMANDS -->
 			<tr class="header"><th id="RemoveFunctions" colspan="2">Removal Functions</th></tr>
 				<tr>
 					<th id="GJ_remove_data"><span id="GJ_remove_userKey">GJ_remove_userData(now?, key)</span><br /><span id="GJ_remove_globalKey">GJ_remove_globalData(now?, key)</span></th>
@@ -141,13 +141,13 @@
 					</ul></td>
 				</tr>
 				
-			<!-- SESSION FUNCTIONS -->
+			<!-- SESSION COMMANDS -->
 			<tr class="header"><th id="SessionFunctions" colspan="2">Session Functions</th></tr>
 				<tr>
 					<th id="GJ_isActive">GJ_isActive()</th>
 					<td><strong>Returns: </strong>
 					<ul>
-						<li><span class="returnValue">true</span> - If you have defined the current user to be "Active". User is set as active automatically upon use of <a class="functionName" href="GJ_login">GJ_login()</a></li>
+						<li><span class="returnValue">true</span> - If you have defined the current user to be "Active". User is set as active automatically upon use of <a class="commandName" href="GJ_login">GJ_login()</a></li>
 						<li><span class="returnValue">false</span> - If you have defined the current user to be "Away"</li>
 					</ul></td>
 				</tr>
@@ -160,12 +160,12 @@
 					<td>Sets the rate at which to update the Game Jolt servers. By default, it's 30 seconds. You can set it to whatever you'd like, but be warned that if the user doesn't successfully ping into the Game Jolt server soon enough, the servers and the API will automatically log the user out.<br /><br /><strong>Returns: </strong>Nothing</td>
 				</tr>
 				
-			<!-- FETCHING FUNCTIONS -->
+			<!-- FETCHING COMMANDS -->
 			<tr class="header"><th id="FetchFunctions" colspan="2">Fetching Functions</th></tr>
-			<tr><td colspan="2">Fetch functions (and all functions that actually connect to Game Jolt) have a special argument called <span class="returnValue">now?</span><br />When set to true, this argument will allow you to stop the game from continuing until all of the requested data has been downloaded. When false, it will be worked on in the background and the game will continue normally.</td></tr>
+			<tr><td colspan="2">Fetch commands (and all commands that actually connect to Game Jolt) have a special argument called <span class="returnValue">now?</span><br />When set to true, this argument will allow you to stop the game from continuing until all of the requested data has been downloaded. When false, it will be worked on in the background and the game will continue normally.</td></tr>
 			<tr>
 				<th id="GJ_fetch_user">GJ_fetch_user(now?, userID)</th>
-				<td>Requests the user w/ the given ID to Game Jolt, and downloads the data for use with the <a class="functionName" href="#userGetters">User Getter</a> functions.<br /><br />
+				<td>Requests the user w/ the given ID to Game Jolt, and downloads the data for use with the <a class="commandName" href="#userGetters">User Getter</a> commands.<br /><br />
 				<strong>Returns: </strong>
 				<ul>
 					<li><span class="returnValue">GJ_STATUS_OK</span> - If placed in the background or if the user exists and has been downloaded</li>
@@ -178,7 +178,7 @@
 			</tr>
 			<tr>
 				<th id="GJ_fetch_trophies">GJ_fetch_trophies(now?)</th>
-				<td>Requests the trophies associated with your game and downloads them for use with the <a class="functionName" href="#trophyGetters">Trophy Getter</a> functions.<br /><br />
+				<td>Requests the trophies associated with your game and downloads them for use with the <a class="commandName" href="#trophyGetters">Trophy Getter</a> commands.<br /><br />
 				<strong>Returns: </strong>
 				<ul>
 					<li><span class="returnValue">GJ_STATUS_OK</span> - If placed in the background or if the trophies have been downloaded</li>
@@ -189,7 +189,7 @@
 			</tr>
 			<tr>
 				<th id="GJ_fetch_tables">GJ_fetch_tables(now?)</th>
-				<td>Requests the information associated with all of your high score tables. <em>You must call this function before using any high score functions!</em><br /><br />
+				<td>Requests the information associated with all of your high score tables. <em>You must call this command before using any high score commands!</em><br /><br />
 				<strong>Returns: </strong>
 				<ul>
 					<li><span class="returnValue">GJ_STATUS_OK</span> - If placed in the background or if the trophies have been downloaded</li>
@@ -201,7 +201,7 @@
 			</tr>
 			<tr>
 				<th id="GJ_fetch_data"><span id="GJ_fetch_userData">GJ_fetch_userData(now?, key)</span><br /><span id="GJ_fetch_globalData">GJ_fetch_globalData(now?, key)</span><br /><span id="GJ_fetch_userFile">GJ_fetch_userFile(now?, key, file)</span><br /><span id="GJ_fetch_globalFile">GJ_fetch_globalFile(now?, key, file)</span></th>
-				<td>This gives you access to Game Jolt's data storage feature! You can achieve all sorts of neat things that involve online communications. Trading systems, turn-based battles, messaging, etc. can all be achieved with clever use of Game Jolt's data storage.<br />The difference between USER and GLOBAL data functions, is that user data requires you to be logged in as it only returns data for a user that gives you their token. Global data is data that can be accessed and modified by any user.<br />The File version of the scripts work the same way, but instead of storing them into your dynamic memory it stores the downloaded information into the file location you feed in.<br /><br />
+				<td>This gives you access to Game Jolt's data storage feature! You can achieve all sorts of neat things that involve online communications. Trading systems, turn-based battles, messaging, etc. can all be achieved with clever use of Game Jolt's data storage.<br />The difference between USER and GLOBAL data commands, is that user data requires you to be logged in as it only returns data for a user that gives you their token. Global data is data that can be accessed and modified by any user.<br />The File version of the scripts work the same way, but instead of storing them into your dynamic memory it stores the downloaded information into the file location you feed in.<br /><br />
 				<strong>Returns: </strong>
 				<ul>
 					<li><span class="returnValue">GJ_STATUS_OK</span> - If placed in the background or if the data has been downloaded</li>
@@ -212,7 +212,7 @@
 			</tr>
 			<tr>
 				<th><span id="GJ_fetch_userKeys">GJ_fetch_userKeys(now?)</span><br /><span id="GJ_fetch_globalKeys">GJ_fetch_globalKeys(now?)</span></th>
-				<td>Downloads all of the keys stored in a user's data store or the global store. Can be accessed using the <a class="functionName" href="keyGetters">Data Key Getter</a> functions.<br /><br />
+				<td>Downloads all of the keys stored in a user's data store or the global store. Can be accessed using the <a class="commandName" href="keyGetters">Data Key Getter</a> commands.<br /><br />
 				<strong>Returns: </strong>
 				<ul>
 					<li><span class="returnValue">GJ_STATUS_OK</span> - If placed in the background or if the data has been downloaded</li>
@@ -223,7 +223,7 @@
 			</tr>
 			<tr>
 				<th id="GJ_fetch_scores"><span id="GJ_fetch_tableScores">GJ_fetch_tableScores(now?, tableID, count)</span><br /><span id="GJ_fetch_tableScores_user">GJ_fetch_tableScores_user(now?, tableID, count)</span></th>
-				<td>Fetch the amount of scores defined by count, from the table defined by the table ID. You can find your tables' ID's by going to the Achievements tab of your game editing page, and then clicking the High Scores tab. Also, an important note is that using <em>0</em> as the tableID assumes you are attempting to use the <em>Primary Table</em> of your game. You can assign a primary table on the same page.<br/>Using the _user function only downloads the data of the currently logged in user.<br /><br />
+				<td>Fetch the amount of scores defined by count, from the table defined by the table ID. You can find your tables' ID's by going to the Achievements tab of your game editing page, and then clicking the High Scores tab. Also, an important note is that using <em>0</em> as the tableID assumes you are attempting to use the <em>Primary Table</em> of your game. You can assign a primary table on the same page.<br/>Using the _user command only downloads the data of the currently logged in user.<br /><br />
 				<strong>Returns: </strong>
 				<ul>
 					<li><span class="returnValue">GJ_STATUS_OK</span> - If placed in the background or if the data has been downloaded</li>
@@ -233,12 +233,12 @@
 				</ul></td>
 			</tr>
 				
-			<!-- STORAGE FUNCTIONS -->
+			<!-- STORAGE COMMANDS -->
 			<tr class="header"><th id="StoreFunctions" colspan="2">Storage Functions</th></tr>
-				<tr><td colspan="2">Store functions (and all functions that actually connect to Game Jolt) have a special argument called <span class="returnValue">now?</span><br />When set to true, this argument will allow you to stop the game from continuing until all of the requested data has been downloaded. When false, it will be worked on in the background and the game will continue normally.</td></tr>
+				<tr><td colspan="2">Store commands (and all commands that actually connect to Game Jolt) have a special argument called <span class="returnValue">now?</span><br />When set to true, this argument will allow you to stop the game from continuing until all of the requested data has been downloaded. When false, it will be worked on in the background and the game will continue normally.</td></tr>
 			<tr>
 				<th id="GJ_store_data"><span id="GJ_store_userData">GJ_store_userData(now?, key)</span><br /><span id="GJ_store_globalData">GJ_store_globalData(now?, key)</span><br /><span id="GJ_store_userFile">GJ_store_userFile(now?, key, file)</span><br /><span id="GJ_store_globalFile">GJ_store_globalFile(now?, key, file)</span></th>
-				<td>These functions store your local data storage onto the Game Jolt servers. It's important to note that you don't feed the new value into these functions. Rather, you use the <a href="#GJ_data_" class="functionName">Data Storage Functions</a> to modify them first before storing them. User storage requires a logged-in user and stores the data into their personal storage, whereas global storage stores the data into the global storage. Using the File version of these scripts will upload the contents of the given file to the Game Jolt server instead of the local data storage.<br /><br />
+				<td>These commands store your local data storage onto the Game Jolt servers. It's important to note that you don't feed the new value into these commands. Rather, you use the <a href="#GJ_data_" class="commandName">Data Storage Functions</a> to modify them first before storing them. User storage requires a logged-in user and stores the data into their personal storage, whereas global storage stores the data into the global storage. Using the File version of these scripts will upload the contents of the given file to the Game Jolt server instead of the local data storage.<br /><br />
 				<strong>Returns: </strong>
 				<ul>
 					<li><span class="returnValue">GJ_STATUS_OK</span> - If placed in the background or if the data has been successfully uploaded</li>
@@ -271,7 +271,7 @@
 			</tr>
 			<tr>
 				<th id="GJ_store_guestScore">GJ_store_guestScore(now?, tableID, name, score, sort, extra data)</th>
-				<td>This will work for anyone who doesn't have a Game Jolt account. You simply give them a name and that will be displayed on the high score table in place of a user. All the other parameters are equivalent to <a class="functionName" href="#GJ_store_score">GJ_store_score()</a>.<br /><br />
+				<td>This will work for anyone who doesn't have a Game Jolt account. You simply give them a name and that will be displayed on the high score table in place of a user. All the other parameters are equivalent to <a class="commandName" href="#GJ_store_score">GJ_store_score()</a>.<br /><br />
 				<strong>Returns: </strong>
 				<ul>
 					<li><span class="returnValue">GJ_STATUS_OK</span> - If placed in the background or if the score was stored successfully</li>
@@ -281,10 +281,10 @@
 				</ul></td>
 			</tr>
 				
-			<!-- USER FUNCTIONS -->
+			<!-- USER COMMANDS -->
 			<tr class="header"><th id="UserFunctions" colspan="2">User Functions</th></tr>
-			<tr><td colspan="2">The userID argument requested in the following functions are the userIDs found on the Game Jolt website. For example, my user ID is 1165 (as can be seen by visiting my <a target="_blank" href="http://gamejolt.com/profile/thatbrod/1165/">Game Jolt profile</a> (Look at the url!)) and so I'd access my data by using <span class="functionName">GJ_user_*(1165)</span><br /><br />
-			Using <em>0</em> as the userID is a special case. It is recognized as the currently logged in user. Also, if <a class="functionName" href="#GJ_login">GJ_login()</a> is successful, <a class="functionName" href="#GJ_user_isReady">GJ_user_isReady(0)</a> will always return true until that user logs out.</td></tr>
+			<tr><td colspan="2">The userID argument requested in the following commands are the userIDs found on the Game Jolt website. For example, my user ID is 1165 (as can be seen by visiting my <a target="_blank" href="http://gamejolt.com/profile/thatbrod/1165/">Game Jolt profile</a> (Look at the url!)) and so I'd access my data by using <span class="commandName">GJ_user_*(1165)</span><br /><br />
+			Using <em>0</em> as the userID is a special case. It is recognized as the currently logged in user. Also, if <a class="commandName" href="#GJ_login">GJ_login()</a> is successful, <a class="commandName" href="#GJ_user_isReady">GJ_user_isReady(0)</a> will always return true until that user logs out.</td></tr>
 			<tr>
 				<th id="GJ_user_isReady">GJ_user_isReady(userID)</th>
 				<td><strong>Returns: </strong>
@@ -318,21 +318,21 @@
 					<span id="GJ_user_isModerator">GJ_user_isModerator(userID)</span>
 				</th>
 				<td>
-					These are the "getter" functions associated with users.<br /><br />
+					These are the "getter" commands associated with users.<br /><br />
 					
 					<strong>Returns: </strong>
 					<ul>
 						<li><span class="returnValue">Corresponding value</span> - If the user is ready</li>
 						<li><span class="returnValue">N/A (string)</span> - If the user is not ready</li>
-						<li><span class="returnValue">false (real)</span> - If the user is not ready and using an <span class="functionName">is*</span> getter</li>
+						<li><span class="returnValue">false (real)</span> - If the user is not ready and using an <span class="commandName">is*</span> getter</li>
 						<li><span class="returnValue">noone (-4)</span> - For getAvatar, when either the avatar has not finished downloading, does not exist at all, or if user isn't ready.</li>
 					</ul>
 				</td>
 			</tr>
 			
-			<!-- TROPHY FUNCTIONS -->
+			<!-- TROPHY COMMANDS -->
 			<tr class="header"><th id="TrophyFunctions" colspan="2">Trophy Functions</th></tr>
-			<tr><td colspan="2">The trophyID argument used in the following functions are the same found on the Game Jolt achievements tab of your game. Each trophy you add will have its own ID, which you use here to access the trophy data. Of course, you could always just  set the trophy data in your game yourself, but the option is available to you.<br/><br/>To have users achieve trophies, see <a href="#GJ_store_trophyEarned" class="functionName">GJ_store_trophyEarned()</a>.</td></tr>
+			<tr><td colspan="2">The trophyID argument used in the following commands are the same found on the Game Jolt achievements tab of your game. Each trophy you add will have its own ID, which you use here to access the trophy data. Of course, you could always just  set the trophy data in your game yourself, but the option is available to you.<br/><br/>To have users achieve trophies, see <a href="#GJ_store_trophyEarned" class="commandName">GJ_store_trophyEarned()</a>.</td></tr>
 			<tr>
 				<th id="GJ_trophiesReady">GJ_trophiesReady()</th>
 				<td><strong>Returns: </strong>
@@ -352,18 +352,18 @@
 				<span id="GJ_trophy_isGold">GJ_trophy_isGold(trophyID)</span><br />
 				<span id="GJ_trophy_isSilver">GJ_trophy_isSilver(trophyID)</span><br />
 				<span id="GJ_trophy_isPlatinum">GJ_trophy_isPlatinum(trophyID)</span></th>
-				<td>These are the "getter" functions associated with trophies.<br /><br />
+				<td>These are the "getter" commands associated with trophies.<br /><br />
 				
 				<strong>Returns: </strong>
 				<ul>
 					<li><span class="returnValue">Corresponding value</span> - If the trophies are ready</li>
 					<li><span class="returnValue">N/A (string)</span> - If the trophies aren't ready</li>
-					<li><span class="returnValue">false (real)</span> - If the trophies aren't ready and using an <span class="functionName">is*</span> getter</li>
+					<li><span class="returnValue">false (real)</span> - If the trophies aren't ready and using an <span class="commandName">is*</span> getter</li>
 					<li><span class="returnValue">noone (-4)</span> - For getImage, when either the image has not finished downloading, does not exist at all, or if the trophies aren't ready.</li>
 				</ul></td>
 			</tr>
 			
-			<!-- DATA STORAGE FUNCTIONS -->
+			<!-- DATA STORAGE COMMANDS -->
 			<tr class="header"><th id="GJ_data_" colspan="2">Data Storage Functions</th></tr>
 			<tr>
 				<th id="GJ_data_user_getters"><span id="GJ_data_user_getReal">GJ_data_user_getReal(key)</span><br /><span id="GJ_data_global_getReal">GJ_data_global_getReal(key)</span></th>
@@ -391,7 +391,7 @@
 			</tr>
 			<tr>
 				<th id="GJ_data_set"><span id="GJ_data_user_set">GJ_data_user_set(key, value)</span><br /><span id="GJ_data_global_set">GJ_data_global_set(key, value)</span></th>
-				<td>Inserts the information into the <em>local</em> data storage, linking it to the given key. You need to change your information through these functions <em>before</em> uploading the key onto the servers.<br/><br/>
+				<td>Inserts the information into the <em>local</em> data storage, linking it to the given key. You need to change your information through these commands <em>before</em> uploading the key onto the servers.<br/><br/>
 				<strong>Returns: </strong>
 				<ul>
 					<li><span class="returnValue">GJ_STATUS_INVALID_CALL</span> - If you try to set user data while not logged in.</li>
@@ -421,7 +421,7 @@
 			</tr>
 			
 			
-			<!-- TABLE FUNCTIONS -->
+			<!-- TABLE COMMANDS -->
 			<tr class="header"><th id="GJ_table_" colspan="2">Highscore Table Functions</th></tr>
 			<tr>
 				<th id="GJ_table_get_size"><span id="GJ_table_size">GJ_table_size(tableID)</span><br />
@@ -435,7 +435,7 @@
 				<th id="GJ_tablesReady">GJ_tablesReady()<br /></th>
 				<td><strong>Returns: </strong>
 				<ul>
-					<li><span class="returnValue">true</span> - The information of the tables have been downloaded, and score-related-functions can now be run.</li>
+					<li><span class="returnValue">true</span> - The information of the tables have been downloaded, and score-related-commands can now be run.</li>
 					<li><span class="returnValue">false</span> - The information is still being downloaded.
 				</ul></td>
 			</tr>
@@ -452,14 +452,14 @@
 				<span id="GJ_tableScore_user_getExtraData">GJ_tableScore_user_getExtraData(tableID, rank)</span><br />
 				<span id="GJ_tableScore_user_getScoreName">GJ_tableScore_user_getScoreName(tableID, rank)</span><br />
 				<span id="GJ_tableScore_user_getSortValue">GJ_tableScore_user_getSortValue(tableID, rank)</span></th>
-				<td>The Getter functions associated with table scores. In order to use these, you need to fetch the scores and then access their data through these functions. Rank is a value from (0 to GJ_table_size(tableID) - 1), with 0 is the best score.<br/><br/>
+				<td>The Getter commands associated with table scores. In order to use these, you need to fetch the scores and then access their data through these commands. Rank is a value from (0 to GJ_table_size(tableID) - 1), with 0 is the best score.<br/><br/>
 				<strong>Returns: </strong>
 				<ul>
 					<li><span class="returnValue">Value</span> - The value you requested based on the tableID, rank, and _user vs global scores.</li>
-					<li><span class="returnValue">N/A</span> - When using the get* functions for string values and the rank and/or tableID can not be found.</li>
-					<li><span class="returnValue">0</span> - When using the get* functions for real values and the rank and/or tableID can not be found.</li>
-					<li><span class="returnValue">-1</span> - When using getUserID function and the rank and/or tableID can not be found.</li>
-					<li><span class="returnValue">false</span> - When using the is* functions and the rank and/or tableID can not be found.</li>
+					<li><span class="returnValue">N/A</span> - When using the get* commands for string values and the rank and/or tableID can not be found.</li>
+					<li><span class="returnValue">0</span> - When using the get* commands for real values and the rank and/or tableID can not be found.</li>
+					<li><span class="returnValue">-1</span> - When using getUserID command and the rank and/or tableID can not be found.</li>
+					<li><span class="returnValue">false</span> - When using the is* commands and the rank and/or tableID can not be found.</li>
 				</ul></td>
 			</tr>
 		</table>
