@@ -5,7 +5,7 @@
 </div>
 <div class="wrapper">
 	<h3>Getting Started</h3>
-	<p>I've written a tutorial on the complete usage of this API <a href="https://github.com/thatbrod/GameMaker-GJAPI/blob/master/Tutorial.md" alt="Tutorial Page">here</a>. Please refer to that for instructions of use, as this page is dedicated to the descriptions of each individual function.</p>
+	<p>I've written a tutorial on the complete usage of this API <a href="https://github.com/thatbrod/GameMaker-GJAPI/blob/master/Tutorial.md" alt="Tutorial Page">here</a>. Please refer to that for instructions of use, as this page is dedicated to the descriptions of each individual command.</p>
 	<h3>Documentation</h3>
 	<table class="functionSet">
 			<!-- MAIN FUNCTIONS -->
